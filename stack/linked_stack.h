@@ -1,99 +1,42 @@
 /**
- * 文件名：linked_stack_t_h
- * 作者：NboWan
- * 日期：2025-12-31
- * 描述：基于链表的栈函数实现
- * 补充：结构设计不合理，该版本已作废
+ * 文件名:correct_linked_stack.h
+ * 作者:NboWan
+ * 日期:2025-12-31
+ * 描述:修改过的基于链表的栈函数库
+ * 编码格式:gbk
  */
 
-// #ifndef LINKED_STACK_H
-// #define LINKED_STACK_H
+#ifndef CURRECT_LINKED_STACK_H
+#define CURRECT_LINKED_STACK_H
 
-// #include "node.h"
 
-// /**
-//  * 这是一个基于链表的栈结构体实现
-//  */
-// typedef struct LinkedStack
-// {
-//     elemType data;
-//     struct LinkedStack *next;
-// } LinkedStack;
+#include "node.h"
 
-// LinkedStack* initLinkedStack();
-// bool isLinkedStackEmpty(LinkedStack *s);
-// LinkedStack* pushLinkedStack(LinkedStack *s, elemType e);
-// elemType popLinkedStack(LinkedStack *s);
-// elemType readTopLinkedStack(LinkedStack *s);
-// int readLinkedStackLen(LinkedStack *s);
-// void readLinkedStackList(LinkedStack *s);
-// void destroyLinkedStack(LinkedStack *s);
+/**
+ * 这是一个管理栈的结构体
+ */
+typedef struct 
+{
+    node_t *top;    //栈顶指针
+    int size;       //栈大小
+} linked_stack_t;
 
-// LinkedStack *initLinkedStack()
-// {
-//     LinkedStack *s = (LinkedStack *)malloc(sizeof(LinkedStack));
-//     s->data = 0;
-//     s->next = NULL;
-//     return s;
-// }
 
-// bool isLinkedStackEmpty(LinkedStack *s)
-// {
-//     return s->data == 0;
-// }
+/******************************************************函数声明***********************************************************/
 
-// LinkedStack* pushLinkedStack(LinkedStack *s, elemType e)
-// {
-//     LinkedStack *p = s;
-//     while(p->next != NULL)
-//     {
-//         p = p->next;
-//     }
-//     LinkedStack *new_linked_stack_t = (LinkedStack *)malloc(sizeof(LinkedStack));
-//     p->next = new_linked_stack_t;
-//     new_linked_stack_t->next = NULL;
-//     new_linked_stack_t->data = e;
-//     s->data++;
-//     return new_linked_stack_t;
-// }
 
-// elemType popLinkedStack(LinkedStack *s)
-// {
-//     LinkedStack *p = s;
-//     for (int i = 1; i < s->data; i++)
-//     {
-//         p = p->next;
-//     }
-//     LinkedStack *linked_stack_t_to_delete = p->next;
-//     free(linked_stack_t_to_delete);
-//     p->next = NULL;
-//     s->data--;
-//     return p->data;
-// }
-// elemType readTopLinkedStack(LinkedStack *s)
-// {
-//     LinkedStack *p = s;
-//     while(s != NULL) p = p->next;
-//     return p->data;
-// }
-// void readLinkedStackList(LinkedStack *s)
-// {
-//     LinkedStack *p;
-//     while(p != NULL)
-//     {
-//         p = p->next;
-//         printf("%d \n", p->data);
-//     }
-// }
+linked_stack_t *initLinkedStack();
+bool isLinkedStackEmpty(linked_stack_t *s);
+bool linkedStackPush(linked_stack_t *s, elemType e);
+bool linkedStackPop(linked_stack_t *s, elemType *e);
+bool linkedStackPeek(linked_stack_t *s, elemType *e);
+int getLinkedStackLen(linked_stack_t *s);
+void readLinkedStackList(linked_stack_t *s);
+void clearLinkedStack(linked_stack_t *s);
+void destroyLinkedStack(linked_stack_t **s);
 
-// void destroyLinkedStack(LinkedStack *s)
-// {
-//     for (int i = 0; i < s->data;i++)
-//     {
-//         LinkedStack *linked_stack_t_to_delete = s;
-//         free(linked_stack_t_to_delete);
-//         if(s->next != NULL)  s = s->next;
-//     }
-// }
 
-// #endif
+/*************************************************************************************************************************/
+
+
+#endif

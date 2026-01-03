@@ -1,2 +1,4 @@
-# Data-Structure
-Some data structure I write.
+# 数据结构学习笔记
+---
+## 链表
+## 栈
