@@ -5,6 +5,7 @@
  * 描述:栈的简单实现
  * 编码格式:gbk
  */
+//zheliwomenbazhegewenjianxiugaile
 
 #ifndef STACK_H
 #define STACK_H
