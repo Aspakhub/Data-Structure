@@ -1,17 +1,15 @@
 /**
- * 文件名: queue.h
+ * 文件名: linked_queue.h
  * 作者: NboWan
  * 日期: 2026-1-3
- * 描述: 队列库函数头文件
+ * 描述: 链表队列库函数头文件
+ * 编码格式:gbk
  */
 
 #ifndef LINKED_QUEUE_H
 #define LINKED_QUEUE_H
 
 #include "node.h"
-
-#define QUEUE_SIZE 100
-
 
 typedef struct
 {
@@ -28,7 +26,7 @@ bool isLinkedQueueEmpty(queue_t *q);
 bool enLinkedQueue(queue_t *q, elemType e);
 bool deLinkedQueue(queue_t *q, elemType *e);
 bool peekLinkedQueue(queue_t *q, elemType *e);
-int readLinkQueueLen(queue_t *q);
+int readLinkedQueueLen(queue_t *q);
 void destroyLinkedQueue(queue_t *q);
 
 /************************************************************************************************************************/
