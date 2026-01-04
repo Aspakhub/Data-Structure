@@ -8,7 +8,9 @@
 
 #include "linked_queue.h"
 
-
+/**
+ * 初始化队列
+ */
 queue_t* initLinkedQueue()
 {
     queue_t *q = (queue_t *)malloc(sizeof(queue_t));
@@ -25,11 +27,17 @@ queue_t* initLinkedQueue()
     return q;
 }
 
+/**
+ * 判断队列是否为空
+ */
 bool isLinkedQueueEmpty(queue_t *q)
 {
     return q->size == 0;
 }
 
+/**
+ * 入队操作
+ */
 bool enLinkedQueue(queue_t *q, elemType e)
 {
     node_t * new_node = (node_t *)malloc(sizeof(node_t));
@@ -55,6 +63,9 @@ bool enLinkedQueue(queue_t *q, elemType e)
     return true;
 }
 
+/**
+ * 出队操作
+ */
 bool deLinkedQueue(queue_t *q, elemType *e)
 {
     if(isLinkedQueueEmpty(q))
@@ -81,6 +92,9 @@ bool deLinkedQueue(queue_t *q, elemType *e)
     return true;
 }
 
+/**
+ * 查看队头元素
+ */
 bool peekLinkedQueue(queue_t *q, elemType *e)
 {
     if(isLinkedQueueEmpty(q))
@@ -93,11 +107,17 @@ bool peekLinkedQueue(queue_t *q, elemType *e)
     return true;
 }
 
+/**
+ * 获取队列长度
+ */
 int readLinkedQueueLen(queue_t *q)
 {
     return q->size;
 }
 
+/**
+ * 删除队列并释放内存
+ */
 void destroyLinkedQueue(queue_t *q)
 {
     if(q == NULL)
