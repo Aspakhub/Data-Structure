@@ -5,7 +5,7 @@
  * 描述:栈的简单实现
  * 编码格式:gbk
  */
-//zheliwomenbazhegewenjianxiugaile
+
 
 #ifndef STACK_H
 #define STACK_H
@@ -24,6 +24,7 @@ typedef struct
 
 /******************************************************函数声明***********************************************************/
 
+
 void initStack(stack_t *s);
 bool isStackEmpty(stack_t *s);
 bool isStackFull(stack_t *s);
@@ -32,6 +33,7 @@ bool popStack(stack_t *s, elemType *e);
 elemType readTopStack(stack_t *s);
 void readStacklist(stack_t *s);
 void clearStack(stack_t *s);
+
 
 /*************************************************************************************************************************/
 

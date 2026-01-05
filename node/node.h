@@ -26,6 +26,7 @@ typedef struct node_t
 
 /*******************************************************º¯ÊýÉùÃ÷**********************************************************/
 
+
 bool isNodeEmpty(node_t *L);
 node_t *initNode();
 node_t *insertHead(node_t *L, elemType e);
@@ -37,6 +38,7 @@ int readNodeLen(node_t *L);
 node_t *insertNodeWithPos(node_t *L, elemType e, int pos);
 bool deleteNodeWithPos(node_t *L, int pos);
 bool updateNode(node_t *L, elemType e, int pos);
+
 
 /*************************************************************************************************************************/
 

@@ -20,6 +20,7 @@ typedef struct
 
 /********************************************************º¯ÊýÉùÃ÷*********************************************************/
 
+
 linked_queue_t *initLinkedQueue();
 bool isLinkedQueueEmpty(linked_queue_t *q);
 bool enLinkedQueue(linked_queue_t *q, elemType e);
@@ -27,6 +28,7 @@ bool deLinkedQueue(linked_queue_t *q, elemType *e);
 bool peekLinkedQueue(linked_queue_t *q, elemType *e);
 int readLinkedQueueLen(linked_queue_t *q);
 void destroyLinkedQueue(linked_queue_t *q);
+
 
 /************************************************************************************************************************/
 #endif

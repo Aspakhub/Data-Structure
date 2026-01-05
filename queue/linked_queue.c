@@ -6,7 +6,12 @@
  * 编码格式:gbk
  */
 
+
 #include "linked_queue.h"
+
+
+/*******************************************************函数定义**********************************************************/
+
 
 /**
  * 初始化队列
@@ -56,8 +61,8 @@ bool enLinkedQueue(linked_queue_t *q, elemType e)
     }
     else
     {
-        q->rear->next = new_node;
-        q->rear = new_node;
+        q->rear->next = new_node;   //让新节点加入队列
+        q->rear = new_node;    //更新队头指针指向新节点
     }
     q->size++;
     return true;
@@ -127,8 +132,11 @@ void destroyLinkedQueue(linked_queue_t *q)
     for (int i = 0; i < q->size;)
     {
         elemType temp;
-        deLinkedQueue(q, &temp);
+        deLinkedQueue(q, &temp);    //出队
     }
     free(q);
     printf("删除成功!!! \n");
 }
+
+
+/*************************************************************************************************************************/
