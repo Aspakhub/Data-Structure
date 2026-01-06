@@ -3,7 +3,7 @@
  * 作者:NboWan
  * 日期:2025-12-31
  * 描述:修改过的基于链表的栈函数库
- * 编码格式:gbutf-8
+ * 编码格式:utf-8
  */
 
 #ifndef CURRECT_LINKED_STACK_H

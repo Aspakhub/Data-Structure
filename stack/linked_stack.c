@@ -3,7 +3,7 @@
  * 作者: NboWan
  * 日期: 2026-1-3
  * 描述: 链表栈库函数源文件
- * 编码格式:gbutf-8
+ * 编码格式:utf-8
  */
 
 #include "linked_stack.h"
