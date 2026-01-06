@@ -1,29 +1,26 @@
 /**
- * ÎÄ¼şÃû:linked_stack.h
- * ×÷Õß:NboWan
- * ÈÕÆÚ:2025-12-31
- * ÃèÊö:ĞŞ¸Ä¹ıµÄ»ùÓÚÁ´±íµÄÕ»º¯Êı¿â
- * ±àÂë¸ñÊ½:gbk
+ * æ–‡ä»¶å:linked_stack.h
+ * ä½œè€…:NboWan
+ * æ—¥æœŸ:2025-12-31
+ * æè¿°:ä¿®æ”¹è¿‡çš„åŸºäºé“¾è¡¨çš„æ ˆå‡½æ•°åº“
+ * ç¼–ç æ ¼å¼:gbutf-8
  */
 
 #ifndef CURRECT_LINKED_STACK_H
 #define CURRECT_LINKED_STACK_H
 
-
 #include "node.h"
 
 /**
- * ÕâÊÇÒ»¸ö¹ÜÀíÕ»µÄ½á¹¹Ìå
+ * è¿™æ˜¯ä¸€ä¸ªç®¡ç†æ ˆçš„ç»“æ„ä½“
  */
-typedef struct 
+typedef struct
 {
-    node_t *top;    //Õ»¶¥Ö¸Õë
-    int size;       //Õ»´óĞ¡
+    node_t *top; // æ ˆé¡¶æŒ‡é’ˆ
+    int size;    // æ ˆå¤§å°
 } linked_stack_t;
 
-
-/******************************************************º¯ÊıÉùÃ÷***********************************************************/
-
+/******************************************************å‡½æ•°å£°æ˜***********************************************************/
 
 linked_stack_t *initLinkedStack();
 bool isLinkedStackEmpty(linked_stack_t *s);
@@ -35,8 +32,6 @@ void readLinkedStackList(linked_stack_t *s);
 void clearLinkedStack(linked_stack_t *s);
 void destroyLinkedStack(linked_stack_t **s);
 
-
 /*************************************************************************************************************************/
-
 
 #endif

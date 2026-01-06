@@ -1,24 +1,23 @@
 /**
- * ÎÄ¼şÃû: linked_stack.c
- * ×÷Õß: NboWan
- * ÈÕÆÚ: 2026-1-3
- * ÃèÊö: Á´±íÕ»¿âº¯ÊıÔ´ÎÄ¼ş
- * ±àÂë¸ñÊ½:gbk
+ * æ–‡ä»¶å: linked_stack.c
+ * ä½œè€…: NboWan
+ * æ—¥æœŸ: 2026-1-3
+ * æè¿°: é“¾è¡¨æ ˆåº“å‡½æ•°æºæ–‡ä»¶
+ * ç¼–ç æ ¼å¼:gbutf-8
  */
 
 #include "linked_stack.h"
-/******************************************************º¯Êı¶¨Òå***********************************************************/
-
+/******************************************************å‡½æ•°å®šä¹‰***********************************************************/
 
 /**
- * ³õÊ¼»¯Õ»
+ * åˆå§‹åŒ–æ ˆ
  */
 linked_stack_t *initLinkedStack()
 {
     linked_stack_t *s = (linked_stack_t *)malloc(sizeof(linked_stack_t));
     if (s == NULL)
     {
-        printf("ÄÚ´æÒÑÂú,´´½¨Ê§°Ü!!! \n");
+        printf("å†…å­˜å·²æ»¡,åˆ›å»ºå¤±è´¥!!! \n");
         return NULL;
     }
     s->top = NULL;
@@ -27,7 +26,7 @@ linked_stack_t *initLinkedStack()
 }
 
 /**
- * ÅĞ¶ÏÕ»ÊÇ·ñÎª¿Õ
+ * åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
  */
 bool isLinkedStackEmpty(linked_stack_t *s)
 {
@@ -37,7 +36,7 @@ bool isLinkedStackEmpty(linked_stack_t *s)
 }
 
 /**
- * Ñ¹Õ»²Ù×÷
+ * å‹æ ˆæ“ä½œ
  */
 bool linkedStackPush(linked_stack_t *s, elemType e)
 {
@@ -45,7 +44,7 @@ bool linkedStackPush(linked_stack_t *s, elemType e)
 
     if (new_stack_node == NULL)
     {
-        printf("ÄÚ´æÒÑÂú,´´½¨Ê§°Ü!!! \n");
+        printf("å†…å­˜å·²æ»¡,åˆ›å»ºå¤±è´¥!!! \n");
         return false;
     }
 
@@ -57,13 +56,13 @@ bool linkedStackPush(linked_stack_t *s, elemType e)
 }
 
 /**
- * ³öÕ»²Ù×÷
+ * å‡ºæ ˆæ“ä½œ
  */
 bool linkedStackPop(linked_stack_t *s, elemType *e)
 {
     if (isLinkedStackEmpty(s))
     {
-        printf("Õ»¿Õ,³öÕ»Ê§°Ü!!! \n");
+        printf("æ ˆç©º,å‡ºæ ˆå¤±è´¥!!! \n");
         return false;
     }
 
@@ -76,7 +75,7 @@ bool linkedStackPop(linked_stack_t *s, elemType *e)
 }
 
 /**
- * ¶ÁÈ¡Õ»¶¥ÔªËØ´óĞ¡
+ * è¯»å–æ ˆé¡¶å…ƒç´ å¤§å°
  */
 bool linkedStackPeek(linked_stack_t *s, elemType *e)
 {
@@ -88,7 +87,7 @@ bool linkedStackPeek(linked_stack_t *s, elemType *e)
 }
 
 /**
- * »ñÈ¡Õ»µÄ³¤¶È
+ * è·å–æ ˆçš„é•¿åº¦
  */
 int getLinkedStackLen(linked_stack_t *s)
 {
@@ -96,7 +95,7 @@ int getLinkedStackLen(linked_stack_t *s)
 }
 
 /**
- * ±éÀúÕ»
+ * éå†æ ˆ
  */
 void readLinkedStackList(linked_stack_t *s)
 {
@@ -104,11 +103,11 @@ void readLinkedStackList(linked_stack_t *s)
 
     if (isLinkedStackEmpty(s))
     {
-        printf("¿ÕÕ»,±éÀúÊ§°Ü!!! \n");
+        printf("ç©ºæ ˆ,éå†å¤±è´¥!!! \n");
         return;
     }
 
-    printf("´ÓÕ»¶¥µ½Õ»µ×,ÔªËØÒÀ´ÎÊÇ: \n");
+    printf("ä»æ ˆé¡¶åˆ°æ ˆåº•,å…ƒç´ ä¾æ¬¡æ˜¯: \n");
     while (temp != NULL)
     {
         printf("%d \n", temp->data);
@@ -117,7 +116,7 @@ void readLinkedStackList(linked_stack_t *s)
 }
 
 /**
- * Çå³ıÕ»ÖĞÔªËØ
+ * æ¸…é™¤æ ˆä¸­å…ƒç´ 
  */
 void clearLinkedStack(linked_stack_t *s)
 {
@@ -133,7 +132,7 @@ void clearLinkedStack(linked_stack_t *s)
 }
 
 /**
- * Ïú»ÙÕ»
+ * é”€æ¯æ ˆ
  */
 void destroyLinkedStack(linked_stack_t **s)
 {
@@ -141,6 +140,5 @@ void destroyLinkedStack(linked_stack_t **s)
     free(*s);
     *s = NULL;
 }
-
 
 /*************************************************************************************************************************/

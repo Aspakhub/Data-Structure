@@ -1,18 +1,17 @@
 /**
- * ÎÄ¼þÃû: base_stack.c
- * ×÷Õß: NboWan
- * ÈÕÆÚ: 2026-1-2
- * ÃèÊö: Êý×éÕ»¿âº¯ÊýÔ´ÎÄ¼þ
- * ±àÂë¸ñÊ½:gbk
+ * æ–‡ä»¶å: base_stack.c
+ * ä½œè€…: NboWan
+ * æ—¥æœŸ: 2026-1-2
+ * æè¿°: æ•°ç»„æ ˆåº“å‡½æ•°æºæ–‡ä»¶
+ * ç¼–ç æ ¼å¼:gbutf-8
  */
 
 #include "base_stack.h"
 
-
-/*******************************************************º¯Êý¶¨Òå**********************************************************/
+/*******************************************************å‡½æ•°å®šä¹‰**********************************************************/
 
 /**
- * Õ»µÄ³õÊ¼»¯
+ * æ ˆçš„åˆå§‹åŒ–
  */
 void initStack(stack_t *s)
 {
@@ -20,7 +19,7 @@ void initStack(stack_t *s)
 }
 
 /**
- * ÅÐ¶ÏÕ»ÊÇ·ñÎª¿Õ
+ * åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
  */
 bool isStackEmpty(stack_t *s)
 {
@@ -28,7 +27,7 @@ bool isStackEmpty(stack_t *s)
 }
 
 /**
- * ÅÐ¶ÏÕ»ÊÇ·ñÒÑÂú
+ * åˆ¤æ–­æ ˆæ˜¯å¦å·²æ»¡
  */
 bool isStackFull(stack_t *s)
 {
@@ -36,13 +35,13 @@ bool isStackFull(stack_t *s)
 }
 
 /**
- * Ñ¹Õ»º¯Êý
+ * åŽ‹æ ˆå‡½æ•°
  */
 bool pushStack(stack_t *s, elemType e)
 {
     if (isStackFull(s))
     {
-        printf("Õ»ÒÑÂú");
+        printf("æ ˆå·²æ»¡");
         return false;
     }
     s->data[s->top] = e;
@@ -51,14 +50,14 @@ bool pushStack(stack_t *s, elemType e)
 }
 
 /**
- * ÒÆ³ýÕ»¶¥£»
- * eÊÇ´æ·Å±»ÒÆ³ýÕ»¶¥Êý¾ÝµÄ»º³åÇøÖ¸Õë
+ * ç§»é™¤æ ˆé¡¶ï¼›
+ * eæ˜¯å­˜æ”¾è¢«ç§»é™¤æ ˆé¡¶æ•°æ®çš„ç¼“å†²åŒºæŒ‡é’ˆ
  */
 bool popStack(stack_t *s, elemType *e)
 {
     if (isStackEmpty(s))
     {
-        printf("Õ»Îª¿Õ,ÎÞÐ§É¾³ý \n");
+        printf("æ ˆä¸ºç©º,æ— æ•ˆåˆ é™¤ \n");
         return false;
     }
     s->top--;
@@ -67,20 +66,20 @@ bool popStack(stack_t *s, elemType *e)
 }
 
 /**
- * »ñÈ¡Õ»¶¥Öµ
+ * èŽ·å–æ ˆé¡¶å€¼
  */
 elemType readTopStack(stack_t *s)
 {
     if (isStackEmpty(s))
     {
-        printf("Õ»Îª¿Õ,ÎÞÐ§¶ÁÈ¡");
+        printf("æ ˆä¸ºç©º,æ— æ•ˆè¯»å–");
         return 0;
     }
     return s->data[s->top - 1];
 }
 
 /**
- * ±éÀúÕ»
+ * éåŽ†æ ˆ
  */
 void readStacklist(stack_t *s)
 {
@@ -91,12 +90,11 @@ void readStacklist(stack_t *s)
 }
 
 /**
- * Çå³ýÕ»
+ * æ¸…é™¤æ ˆ
  */
 void clearStack(stack_t *s)
 {
     s->top = 0;
 }
-
 
 /*************************************************************************************************************************/

@@ -1,28 +1,24 @@
 /**
- * ÎÄ¼şÃû: base_queue.c
- * ×÷Õß: NboWan
- * ÈÕÆÚ: 2026-1-5
- * ÃèÊö: Ñ­»·Êı×é¶ÓÁĞ¿âº¯ÊıÔ´ÎÄ¼ş
- * ±àÂë¸ñÊ½:gbk
+ * æ–‡ä»¶å: base_queue.c
+ * ä½œè€…: NboWan
+ * æ—¥æœŸ: 2026-1-5
+ * æè¿°: å¾ªç¯æ•°ç»„é˜Ÿåˆ—åº“å‡½æ•°æºæ–‡ä»¶
+ * ç¼–ç æ ¼å¼:gbutf-8
  */
-
-
 
 #include "base_queue.h"
 
-
-/*******************************************************º¯Êı¶¨Òå**********************************************************/
-
+/*******************************************************å‡½æ•°å®šä¹‰**********************************************************/
 
 /**
- * ³õÊ¼»¯Êı×é¶ÓÁĞ
+ * åˆå§‹åŒ–æ•°ç»„é˜Ÿåˆ—
  */
 queue_t *initQueue()
 {
     queue_t *q = (queue_t *)malloc(sizeof(queue_t));
-    if(!q)
+    if (!q)
     {
-        printf("ÄÚ´æÒÑÂú,·ÖÅäÊ§°Ü!!! \n");
+        printf("å†…å­˜å·²æ»¡,åˆ†é…å¤±è´¥!!! \n");
         return NULL;
     }
 
@@ -33,7 +29,7 @@ queue_t *initQueue()
 }
 
 /**
- * ÅĞ¶Ï¶ÓÁĞÊÇ·ñÎª¿Õ
+ * åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
  */
 bool isQueueEmpty(queue_t *q)
 {
@@ -41,7 +37,7 @@ bool isQueueEmpty(queue_t *q)
 }
 
 /**
- * ÅĞ¶Ï¶ÓÁĞÊÇ·ñÒÑÂú»òÊÇ·ñ·¢Éú¸²¸Ç
+ * åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦å·²æ»¡æˆ–æ˜¯å¦å‘ç”Ÿè¦†ç›–
  */
 bool isQueueFull(queue_t *q)
 {
@@ -49,18 +45,18 @@ bool isQueueFull(queue_t *q)
 }
 
 /**
- * Èë¶Ó
+ * å…¥é˜Ÿ
  */
 void enQueue(queue_t *q, elemType e)
 {
-    if(!q) 
+    if (!q)
     {
         return;
     }
 
     q->data[q->rear] = e;
-    q->rear = (q->rear+1) % MAX_SIZE;
-    if(q->size < MAX_SIZE)
+    q->rear = (q->rear + 1) % MAX_SIZE;
+    if (q->size < MAX_SIZE)
     {
         q->size++;
     }
@@ -71,31 +67,31 @@ void enQueue(queue_t *q, elemType e)
 }
 
 /**
- * ³ö¶Ó
+ * å‡ºé˜Ÿ
  */
 bool deQueue(queue_t *q, elemType *e)
 {
     if (!q || !e || q->size == 0)
     {
-        printf("¶ÓÁĞÎª¿Õ,³ö¶ÓÊ§°Ü!!! ");
+        printf("é˜Ÿåˆ—ä¸ºç©º,å‡ºé˜Ÿå¤±è´¥!!! ");
         return false;
     }
 
     *e = q->data[q->front];
-    q->front = (q->front + 1) % MAX_SIZE; 
+    q->front = (q->front + 1) % MAX_SIZE;
     q->size--;
 
     return true;
 }
 
 /**
- * ²é¿´¶ÓÍ·ÔªËØ
+ * æŸ¥çœ‹é˜Ÿå¤´å…ƒç´ 
  */
 bool peekQueue(queue_t *q, elemType *e)
 {
     if (!q || !e || q->size == 0)
     {
-        printf("peekÊ§°Ü!!! ");
+        printf("peekå¤±è´¥!!! ");
         return false;
     }
 
@@ -104,13 +100,13 @@ bool peekQueue(queue_t *q, elemType *e)
 }
 
 /**
- * »ñÈ¡¶ÓÁĞ³¤¶È
+ * è·å–é˜Ÿåˆ—é•¿åº¦
  */
 int readQueueLen(queue_t *q)
 {
     if (!q)
     {
-        printf("¿ÕÖ¸Õë, readÊ§°Ü!!! ");
+        printf("ç©ºæŒ‡é’ˆ, readå¤±è´¥!!! ");
         return 0;
     }
 
@@ -118,11 +114,11 @@ int readQueueLen(queue_t *q)
 }
 
 /**
- * Çå¿Õ¶ÓÁĞ
+ * æ¸…ç©ºé˜Ÿåˆ—
  */
 bool clearQueue(queue_t *q)
 {
-    if(!q)
+    if (!q)
     {
         return false;
     }
@@ -134,13 +130,12 @@ bool clearQueue(queue_t *q)
 }
 
 /**
- * Ïú»Ù¶ÓÁĞ
+ * é”€æ¯é˜Ÿåˆ—
  */
 void destroyQueue(queue_t **q)
 {
     free(*q);
     q = NULL;
 }
-
 
 /*************************************************************************************************************************/

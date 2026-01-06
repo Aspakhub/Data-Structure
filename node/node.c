@@ -1,19 +1,19 @@
 /**
- * ÎÄ¼şÃû: node.c
- * ×÷Õß: NboWan
- * ÈÕÆÚ: 2025-12-31
- * ÃèÊö: Á´±í¿âº¯ÊıÔ´ÎÄ¼ş
- * ±àÂë¸ñÊ½:gbk
+ * æ–‡ä»¶å: node.c
+ * ä½œè€…: NboWan
+ * æ—¥æœŸ: 2025-12-31
+ * æè¿°: é“¾è¡¨åº“å‡½æ•°æºæ–‡ä»¶
+ * ç¼–ç æ ¼å¼:utf-8
  */
 
 #include "node.h"
 
-/*******************************************************º¯Êı¶¨Òå**********************************************************/
+/*******************************************************å‡½æ•°å®šä¹‰**********************************************************/
 
 
 /**
- * ÅĞ¶ÏÁ´±íÊÇ·ñÎª¿Õ£»
- * ·µ»ØboolÖµ
+ * åˆ¤æ–­é“¾è¡¨æ˜¯å¦ä¸ºç©ºï¼›
+ * è¿”å›boolå€¼
  */
 bool isNodeEmpty(node_t *L)
 {
@@ -21,8 +21,8 @@ bool isNodeEmpty(node_t *L)
 }
 
 /**
- * ³õÊ¼»¯Í·½Úµã£»
- * ·µ»ØÖµÊÇÍ·½ÚµãµÄµØÖ·
+ * åˆå§‹åŒ–å¤´èŠ‚ç‚¹ï¼›
+ * è¿”å›å€¼æ˜¯å¤´èŠ‚ç‚¹çš„åœ°å€
  */
 node_t *initNode()
 {
@@ -33,7 +33,7 @@ node_t *initNode()
 }
 
 /**
- * Í·²å·¨
+ * å¤´æ’æ³•
  */
 node_t *insertHead(node_t *L, elemType e)
 {
@@ -46,8 +46,8 @@ node_t *insertHead(node_t *L, elemType e)
 }
 
 /**
- * »ñÈ¡Á´±íÎ²µØÖ·£»
- * ·µ»ØÖµÎªÎ²µØÖ·
+ * è·å–é“¾è¡¨å°¾åœ°å€ï¼›
+ * è¿”å›å€¼ä¸ºå°¾åœ°å€
  */
 node_t *getTail(node_t *L)
 {
@@ -62,7 +62,7 @@ node_t *getTail(node_t *L)
 }
 
 /**
- * Î²²å·¨
+ * å°¾æ’æ³•
  */
 node_t *insertTail(node_t *L, elemType e)
 {
@@ -76,14 +76,14 @@ node_t *insertTail(node_t *L, elemType e)
 }
 
 /**
- * Çå¿ÕÁ´±í£»
- * ×¢Òâ£¬Í·½ÚµãÒ²»á±»Çå³ı£»
+ * æ¸…ç©ºé“¾è¡¨ï¼›
+ * æ³¨æ„ï¼Œå¤´èŠ‚ç‚¹ä¹Ÿä¼šè¢«æ¸…é™¤ï¼›
  */
 node_t *destroyList(node_t *L)
 {
     if (L == NULL)
     {
-        printf("Á´±íÒÑÎª¿Õ\n");
+        printf("é“¾è¡¨å·²ä¸ºç©º\n");
         return NULL;
     }
 
@@ -98,18 +98,18 @@ node_t *destroyList(node_t *L)
         node_t_count++;
     }
 
-    printf("Ïú»ÙÁ´±íÍê³É£¬¹²Ïú»Ù%d¸ö½Úµã\n", node_t_count);
-    return NULL; // ·µ»ØNULL¹©Íâ²¿Ê¹ÓÃ
+    printf("é”€æ¯é“¾è¡¨å®Œæˆï¼Œå…±é”€æ¯%dä¸ªèŠ‚ç‚¹\n", node_t_count);
+    return NULL; // è¿”å›NULLä¾›å¤–éƒ¨ä½¿ç”¨
 }
 
 /**
- * ±éÀúÁ´±í
+ * éå†é“¾è¡¨
  */
 void readNodeList(node_t *L)
 {
     if (isNodeEmpty(L))
     {
-        printf("Á´±íÎª¿Õ\n");
+        printf("é“¾è¡¨ä¸ºç©º\n");
         return;
     }
     node_t *p = L->next;
@@ -121,9 +121,9 @@ void readNodeList(node_t *L)
 }
 
 /**
- * »ñÈ¡Á´±í³¤¶È£»
- * Á´±í³¤¶È²»°üº¬Í·½Úµã£»
- * Êı¾İ´æ´¢ÔÚL->dataÖĞ
+ * è·å–é“¾è¡¨é•¿åº¦ï¼›
+ * é“¾è¡¨é•¿åº¦ä¸åŒ…å«å¤´èŠ‚ç‚¹ï¼›
+ * æ•°æ®å­˜å‚¨åœ¨L->dataä¸­
  */
 int readNodeLen(node_t *L)
 {
@@ -131,8 +131,8 @@ int readNodeLen(node_t *L)
 }
 
 /**
- * °´Î»ÖÃ²åÈë½Úµã£»
- * Í·½ÚµãposÎª0
+ * æŒ‰ä½ç½®æ’å…¥èŠ‚ç‚¹ï¼›
+ * å¤´èŠ‚ç‚¹posä¸º0
  */
 node_t *insertNodeWithPos(node_t *L, elemType e, int pos)
 {
@@ -152,7 +152,7 @@ node_t *insertNodeWithPos(node_t *L, elemType e, int pos)
 }
 
 /**
- * °´Î»ÖÃÉ¾³ı½Úµã
+ * æŒ‰ä½ç½®åˆ é™¤èŠ‚ç‚¹
  */
 bool deleteNodeWithPos(node_t *L, int pos)
 {
@@ -171,7 +171,7 @@ bool deleteNodeWithPos(node_t *L, int pos)
 }
 
 /**
- * °´Î»ÖÃ¸üĞÂ½Úµã
+ * æŒ‰ä½ç½®æ›´æ–°èŠ‚ç‚¹
  */
 bool updateNode(node_t *L, elemType e, int pos)
 {

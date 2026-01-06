@@ -1,9 +1,9 @@
 /**
- * ÎÄ¼şÃû: linked_queue.h
- * ×÷Õß: NboWan
- * ÈÕÆÚ: 2026-1-3
- * ÃèÊö: Á´±í¶ÓÁĞ¿âº¯ÊıÍ·ÎÄ¼ş
- * ±àÂë¸ñÊ½:gbk
+ * æ–‡ä»¶å: linked_queue.h
+ * ä½œè€…: NboWan
+ * æ—¥æœŸ: 2026-1-3
+ * æè¿°: é“¾è¡¨é˜Ÿåˆ—åº“å‡½æ•°å¤´æ–‡ä»¶
+ * ç¼–ç æ ¼å¼:gbutf-8
  */
 
 #ifndef LINKED_QUEUE_H
@@ -18,8 +18,7 @@ typedef struct
     int size;
 } linked_queue_t;
 
-/********************************************************º¯ÊıÉùÃ÷*********************************************************/
-
+/********************************************************å‡½æ•°å£°æ˜*********************************************************/
 
 linked_queue_t *initLinkedQueue();
 bool isLinkedQueueEmpty(linked_queue_t *q);
@@ -28,7 +27,6 @@ bool deLinkedQueue(linked_queue_t *q, elemType *e);
 bool peekLinkedQueue(linked_queue_t *q, elemType *e);
 int readLinkedQueueLen(linked_queue_t *q);
 void destroyLinkedQueue(linked_queue_t *q);
-
 
 /************************************************************************************************************************/
 #endif

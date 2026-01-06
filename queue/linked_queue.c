@@ -1,20 +1,17 @@
 /**
- * ÎÄ¼şÃû: linked_queue.c
- * ×÷Õß: NboWan
- * ÈÕÆÚ: 2026-1-4
- * ÃèÊö: Á´±í¶ÓÁĞ¿âº¯ÊıÔ´ÎÄ¼ş
- * ±àÂë¸ñÊ½:gbk
+ * æ–‡ä»¶å: linked_queue.c
+ * ä½œè€…: NboWan
+ * æ—¥æœŸ: 2026-1-4
+ * æè¿°: é“¾è¡¨é˜Ÿåˆ—åº“å‡½æ•°æºæ–‡ä»¶
+ * ç¼–ç æ ¼å¼:gbutf-8
  */
-
 
 #include "linked_queue.h"
 
-
-/*******************************************************º¯Êı¶¨Òå**********************************************************/
-
+/*******************************************************å‡½æ•°å®šä¹‰**********************************************************/
 
 /**
- * ³õÊ¼»¯¶ÓÁĞ
+ * åˆå§‹åŒ–é˜Ÿåˆ—
  */
 linked_queue_t *initLinkedQueue()
 {
@@ -22,7 +19,7 @@ linked_queue_t *initLinkedQueue()
 
     if (q == NULL)
     {
-        printf("ÄÚ´æ¿Õ¼ä²»×ã, ·ÖÅäÄÚ´æÊ§°Ü!!! \n");
+        printf("å†…å­˜ç©ºé—´ä¸è¶³, åˆ†é…å†…å­˜å¤±è´¥!!! \n");
         return NULL;
     }
 
@@ -33,7 +30,7 @@ linked_queue_t *initLinkedQueue()
 }
 
 /**
- * ÅĞ¶Ï¶ÓÁĞÊÇ·ñÎª¿Õ
+ * åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
  */
 bool isLinkedQueueEmpty(linked_queue_t *q)
 {
@@ -41,14 +38,14 @@ bool isLinkedQueueEmpty(linked_queue_t *q)
 }
 
 /**
- * Èë¶Ó²Ù×÷
+ * å…¥é˜Ÿæ“ä½œ
  */
 bool enLinkedQueue(linked_queue_t *q, elemType e)
 {
     node_t *new_node = (node_t *)malloc(sizeof(node_t));
     if (!new_node)
     {
-        printf("ÄÚ´æ¿Õ¼ä²»×ã, ·ÖÅäÄÚ´æÊ§°Ü!!! \n");
+        printf("å†…å­˜ç©ºé—´ä¸è¶³, åˆ†é…å†…å­˜å¤±è´¥!!! \n");
         return false;
     }
 
@@ -61,21 +58,21 @@ bool enLinkedQueue(linked_queue_t *q, elemType e)
     }
     else
     {
-        q->rear->next = new_node;   //ÈÃĞÂ½Úµã¼ÓÈë¶ÓÁĞ
-        q->rear = new_node;    //¸üĞÂ¶ÓÍ·Ö¸ÕëÖ¸ÏòĞÂ½Úµã
+        q->rear->next = new_node; // è®©æ–°èŠ‚ç‚¹åŠ å…¥é˜Ÿåˆ—
+        q->rear = new_node;       // æ›´æ–°é˜Ÿå¤´æŒ‡é’ˆæŒ‡å‘æ–°èŠ‚ç‚¹
     }
     q->size++;
     return true;
 }
 
 /**
- * ³ö¶Ó²Ù×÷
+ * å‡ºé˜Ÿæ“ä½œ
  */
 bool deLinkedQueue(linked_queue_t *q, elemType *e)
 {
     if (isLinkedQueueEmpty(q))
     {
-        printf("¶ÓÁĞÎª¿Õ,³ö¶ÓÊ§°Ü!!! \n");
+        printf("é˜Ÿåˆ—ä¸ºç©º,å‡ºé˜Ÿå¤±è´¥!!! \n");
         return false;
     }
 
@@ -98,13 +95,13 @@ bool deLinkedQueue(linked_queue_t *q, elemType *e)
 }
 
 /**
- * ²é¿´¶ÓÍ·ÔªËØ
+ * æŸ¥çœ‹é˜Ÿå¤´å…ƒç´ 
  */
 bool peekLinkedQueue(linked_queue_t *q, elemType *e)
 {
     if (isLinkedQueueEmpty(q))
     {
-        printf("¶ÓÁĞÎª¿Õ,²é¿´Ê§°Ü!!! \n");
+        printf("é˜Ÿåˆ—ä¸ºç©º,æŸ¥çœ‹å¤±è´¥!!! \n");
         return false;
     }
 
@@ -113,7 +110,7 @@ bool peekLinkedQueue(linked_queue_t *q, elemType *e)
 }
 
 /**
- * »ñÈ¡¶ÓÁĞ³¤¶È
+ * è·å–é˜Ÿåˆ—é•¿åº¦
  */
 int readLinkedQueueLen(linked_queue_t *q)
 {
@@ -121,7 +118,7 @@ int readLinkedQueueLen(linked_queue_t *q)
 }
 
 /**
- * É¾³ı¶ÓÁĞ²¢ÊÍ·ÅÄÚ´æ
+ * åˆ é™¤é˜Ÿåˆ—å¹¶é‡Šæ”¾å†…å­˜
  */
 void destroyLinkedQueue(linked_queue_t *q)
 {
@@ -132,11 +129,10 @@ void destroyLinkedQueue(linked_queue_t *q)
     for (int i = 0; i < q->size;)
     {
         elemType temp;
-        deLinkedQueue(q, &temp);    //³ö¶Ó
+        deLinkedQueue(q, &temp); // å‡ºé˜Ÿ
     }
     free(q);
-    printf("É¾³ı³É¹¦!!! \n");
+    printf("åˆ é™¤æˆåŠŸ!!! \n");
 }
-
 
 /*************************************************************************************************************************/
