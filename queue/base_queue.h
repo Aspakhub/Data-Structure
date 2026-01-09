@@ -3,7 +3,7 @@
  * 作者: NboWan
  * 日期: 2026-1-5
  * 描述: 循环数组队列库函数头文件
- * 编码格式:utf-8
+ * 编码格式:utf8
  */
 
 #ifndef BASE_QUEUE_H
@@ -12,6 +12,7 @@
 #define MAX_SIZE 100
 
 #include "node.h"
+#include "common.h"
 
 typedef struct
 {

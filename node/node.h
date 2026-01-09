@@ -3,17 +3,13 @@
  * 作者：NboWan
  * 日期：2025-12-30
  * 描述：链表库，提供了增删改查等常见操作
- * 编码格式:utf-8
+ * 编码格式:utf8
  */
 
 #ifndef NODE_H
 #define NODE_H
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
-
-typedef int elemType;
+#include "common.h"
 
 /**
  * 这是一个定义链表的结构体

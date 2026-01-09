@@ -3,13 +3,14 @@
  * 作者:NboWan
  * 日期:2025-12-31
  * 描述:修改过的基于链表的栈函数库
- * 编码格式:utf-8
+ * 编码格式:utf8
  */
 
 #ifndef CURRECT_LINKED_STACK_H
 #define CURRECT_LINKED_STACK_H
 
 #include "node.h"
+#include "common.h"
 
 /**
  * 这是一个管理栈的结构体

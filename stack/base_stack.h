@@ -3,13 +3,15 @@
  * 作者:NboWan
  * 日期:2025-12-31
  * 描述:栈的简单实现
- * 编码格式:utf-8
+ * 编码格式:utf8
  */
 
 #ifndef STACK_H
 #define STACK_H
 
 #include "node.h"
+#include "common.h"
+
 #define MAX_SIZE 100
 
 /**

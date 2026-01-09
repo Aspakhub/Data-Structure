@@ -3,13 +3,14 @@
  * 作者: NboWan
  * 日期: 2026-1-3
  * 描述: 链表队列库函数头文件
- * 编码格式:utf-8
+ * 编码格式:utf8
  */
 
 #ifndef LINKED_QUEUE_H
 #define LINKED_QUEUE_H
 
 #include "node.h"
+#include "common.h"
 
 typedef struct
 {
